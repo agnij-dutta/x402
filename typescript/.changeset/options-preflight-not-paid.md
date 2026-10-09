@@ -2,4 +2,4 @@
 "@x402/core": patch
 ---
 
-A route keyed without an HTTP method (for example `"/api/data"`), or a single route config, no longer matches `OPTIONS` requests. The CORS preflight now falls through to the app instead of getting a 402, which stopped browsers from sending the paid request. Routes keyed explicitly as `"OPTIONS /path"` still require payment.
+Fixed method-less routes and single route configs matching `OPTIONS` preflight requests, which answered the browser's CORS preflight with a 402. Routes keyed explicitly as `"OPTIONS /path"` still require payment.
